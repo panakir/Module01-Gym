@@ -15,8 +15,8 @@
     <!--Шапка сайта-->
     <header>
         <div class="header-box">
-            <div class="header-item">
-                <img class="header-logo" src="images/logo.svg" alt="Логотип FreeFit">
+            <div class="header-item first-item">
+                <a href="#" class="header-logo"></a>
                 <nav>
                     <ul class="header-nav">
                         <li><a class="nav-link" href="">Мероприятия</a></li>
@@ -25,6 +25,10 @@
                     </ul>
                 </nav>
             </div>
+            <!--Адаптивная кнопка меню-->
+             <div class="header-btn">
+                <button class="burger-btn" onclick="openModal()"></button>
+             </div>
             <div class="header-item">
                 <a class="icon-instagram" href="https://www.instagram.com/"></a>
                 <a class="icon-facebook" href="https://www.facebook.com/" ></a>
@@ -57,7 +61,7 @@
             </div>
             <div class="events-grid">
                 <div class="events-grid-items item-left">
-                    <div class="events-grid-cover ">
+                    <div class="events-grid-cover">
                         <p class="events-date">29.06 - 4.07</p>
                         <h3 class="events-item-title">Марафон выносливости</h3>
                         <a href="#" class="events-link">Участвовать</a>
@@ -206,9 +210,9 @@
                     <img class="footer-logo" src="images/logo.svg" alt="Логотип FreeFit">
                     <nav>
                         <ul class="footer-nav">
-                            <li><a class="nav-link" href="">Мероприятия</a></li>
-                            <li><a class="nav-link" href="">Расписание</a></li>
-                            <li><a class="nav-link" href="">О компании</a></li>
+                            <li><a class="nav-link-modal" href="">Мероприятия</a></li>
+                            <li><a class="nav-link-modal" href="">Расписание</a></li>
+                            <li><a class="nav-link-modal" href="">О компании</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -220,10 +224,40 @@
                 </div>
                 <div class="footer-item">
                     <p class="footer-copyright">© 2020, Все права защищены</p>
-                    <p class="footer-copyright">Сделано в рамках курса учебной платформы <a href="https://frontendblok.com/">Frontend Blok</a></p>
+                    <p class="footer-copyright">Сделано в рамках курса учебной платформы <a href="https://Annblok.ru/" target="_blank">Annblok</a></p>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- Модальное окно header -->
+    <div id="modal" class="modal">
+        <div class="header-box">
+            <div class="header-item first-item">
+                <a href="#" class="header-logo"></a>
+                <nav>
+                    <ul class="header-nav-modal">
+                        <li><a class="nav-link-modal" href="">Мероприятия</a></li>
+                        <li><a class="nav-link-modal" href="">Расписание</a></li>
+                        <li><a class="nav-link-modal" href="">О компании</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-item">
+                <a class="icon-instagram-modal" href="https://www.instagram.com/"></a>
+                <a class="icon-facebook-modal" href="https://www.facebook.com/" ></a>
+            </div>
+        </div>
+        <button class="burger-close" onclick="closeModal()"></button>
+    </div>
+    <script>
+         // Menu
+         function openModal() {
+            document.getElementById("modal").style.top = "0px";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.top = "-400px";
+        } 
+    </script>
 </body>
 </html>
