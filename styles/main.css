@@ -321,6 +321,7 @@ header {
     width: 58px;
 }
 .text-hidden {
+    font-size: 18px;
     overflow: hidden;
     max-height: 0;
     transition: 0.3s linear;
@@ -332,6 +333,7 @@ header {
 }
 .timeline-grid-item-title {
     font-size: 18px;
+    line-height: 1.5;
     font-weight: 700;
     margin-bottom: 8px;
     margin-top: 40px;
@@ -717,7 +719,7 @@ footer nav {
         gap: 25px;
     }
     .visual img {
-        right: -45vh;
+        right: -45vw;
     }
 }
 @media (max-width: 1200px) {
