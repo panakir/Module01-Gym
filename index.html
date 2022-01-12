@@ -44,11 +44,10 @@
                     <p class="content-text"><span>>&nbsp15</span> &nbspтренировок</p>
                     <p class="content-description">в области спортивной физиологии и нутрициологии</p>
                     <a href="#" class="hiro-link">Узнать подробнее</a>
-                    <a href="#" class="hiro-link-arrow"></a>
+                    <a href="#timeline" class="hiro-link-arrow"></a>
                 </div>
                 <div class="visual">
                     <div class="visual-bg"><img src="images/files/@1x/Image 1 screen.png" alt=""></div>
-                    
                 </div>
             </div>
         </div>  
@@ -92,7 +91,7 @@
     <section class="timeline">
         <div class="container">
             <div class="timeline-header">
-                <h2 class="timeline-title">Расписание тренировок</h2>
+                <h2 class="timeline-title" id="timeline" >Расписание тренировок</h2>
                 <span class="timeline-date-text">22 - 28 июня</span>
             </div>
             <!-- Грид сетка расписания -->
@@ -152,7 +151,6 @@
     <section class="subscribing">
         <div class="subscribing-content">
             <div class="subscribing-header">
-                <div class="yellow-circle"></div>
                 <h2 class="subscribing-title">Подпишитесь на рассылку</h2>
             </div>
             <form class="subscribing-form">
@@ -178,7 +176,6 @@
                 </div>
                 <div class="about-grid-item _image">
                     <div class="about-grid-cover"> 
-                        <img class="about-grid-img" src="images/files/@1x/trainer.png" alt="">
                     </div>
                 </div>
                 <div class="about-grid-item _content">
@@ -217,10 +214,11 @@
                     </nav>
                 </div>
                 <div class="footer-item">
-                    <div class="footer-yellow-circle"></div>
                     <p class="footer-email">info@freefit.com</p>
+                    <div class="footer-link">
                         <a class="footer-icon-instagram" href="https://www.instagram.com/"></a>
                         <a class="footer-icon-facebook" href="https://www.facebook.com/" ></a>
+                    </div>
                 </div>
                 <div class="footer-item">
                     <p class="footer-copyright">© 2020, Все права защищены</p>
@@ -258,6 +256,22 @@
         function closeModal() {
             document.getElementById("modal").style.top = "-400px";
         } 
+
+         // Smooth Scroll
+        const links = document.querySelectorAll(".hiro-link-arrow");
+
+        for (const link of links) {
+            link.addEventListener("click", clickHandler);
+        }
+
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+
+            document.querySelector(href).scrollIntoView({
+                behavior: "smooth"
+        });
+        }
     </script>
 </body>
 </html>

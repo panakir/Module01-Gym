@@ -129,6 +129,9 @@ header {
     width: 52px;
     height: 55px;
 }
+.hiro-link-arrow:hover {
+    transform: scale(1.05);
+}
 .visual {
     position: relative;
 }   
@@ -364,16 +367,18 @@ header {
     font-size: 40px;
     font-weight: 700;
     padding-top: 50px;
+    position: relative;
 }
-.yellow-circle {
+.subscribing-title::before {
+    content: '';
     width: 53px;
     height: 53px;
     border-radius: 100%;
     background: #FBF138;
     box-shadow: 0px 13px 24px rgba(251, 241, 56, 0.3);
     position: absolute;
-    left: -8px;
-    top: 62px;
+    left: -30px;
+    top: 30px;
     z-index: -1;
 }
 .subscribing-form {
@@ -467,17 +472,9 @@ label {
     gap: 64px 15px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 365px 200px;
-    grid-template-areas: "about image"
-                         "_content _content";
-}
-._about {
-   grid-area: about;
-}
-._image {
-    grid-area: image;
 }
 ._content {
-    grid-area: _content;
+    grid-column: 1/3;
     display: flex;
     gap: 67px;
 }
@@ -505,23 +502,22 @@ label {
     background: #2B3541;
     color: #FBF138;
 }
-.about-grid-cover {
-    width: 581px;
-    height: 335px;
-    position: relative;
+._image {
     margin-top: 30px;
     margin-left: 15px;
+    background-image: url(../images/files/@2x/trainer@2x.png);
+    background-size: cover;
+    background-position: center center ;
 }
-.about-grid-cover::after {
-    content: "";
-	display: block;
-	width: 580px;
-	height: 100%;    
-	position: absolute;
-	top: 0;    
-	left: 0;
-	background: linear-gradient(180deg, #FBF138 0%, rgba(253, 249, 182, 0.45) 100%);
-    opacity: 0.3;
+.about-grid-cover {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(180deg, #FBF138 0%, rgba(253, 249, 182, .3) 100%);
+    opacity: .3;
+}
+.about-grid-img {
+    width: 100%;
 }
 .about-grid-title {
     font-size: 18px;
@@ -589,31 +585,32 @@ footer nav {
     font-weight: 700;
     margin-right: 30px;
     z-index: 2;
+    position: relative;
 }
-.footer-yellow-circle {
+.footer-email::before {
+    content: '';
     width: 25px;
     height: 25px;
     border-radius: 100%;
     background: #FBF138;
     box-shadow: 0px 13px 24px rgba(251, 241, 56, 0.3);
     position: absolute;
-    right: 275px;
-    top: 0;
-    z-index: 1;
+    left: -15px;
+    top: -15px;
+    z-index: -1;
 }
 .footer-icon-instagram {
-    width: 30px;
-    height: 30px;
-}
-.footer-icon-instagram {
+    display: inline-block;
     background-image: url(../images/icons/IN.svg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 27px;
     height: 27px;
+    margin-right: 23px;
 }
 .footer-icon-facebook {
+    display: inline-block;
     background-image: url(../images/icons/FB.svg);
     background-position: center center;
     background-size: cover;
@@ -685,7 +682,7 @@ footer nav {
     width: inherit;
 }
 .header-nav-modal {
-    padding: 20px 10px;
+    padding: 20px 0 20px 10px;
     flex-direction: column;
     list-style-type: none;
 }
@@ -752,7 +749,11 @@ footer nav {
         gap: 55px;
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1025px) {
+    header {
+        margin: 0 auto;
+        padding: 30px 10px 15px;
+    }
     .header-nav {
         display: none;
     }
@@ -763,7 +764,7 @@ footer nav {
         flex-basis: 0;
     }
     .visual img {
-        width: 100vw;
+        width: 95%;
     }
     .events-grid {
         display: grid;
@@ -773,9 +774,37 @@ footer nav {
         background-image: url(https://cdn.shopify.com/s/files/1/0300/5526/8445/articles/jivamukti-yoga-570399_900x.jpg?v=1601380394);
         grid-column: 1/3 ;
     }
+    .events {
+        margin-bottom: 20px;
+    }
+    .timeline {
+        margin-bottom: 20px;
+    }
     .timeline-grid {
         display: flex;
         flex-direction: column;
+    }
+    .about {
+        margin-top: 20px;
+    }
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .about-grid-text {
+        max-width: 100%;
+    }
+    ._image {
+        order: 1;
+        height: 54vw;
+    }
+    .about-grid-item-text {
+        flex-basis: 45%;
+    }
+    ._content {
+        gap: 10%;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
     .footer-item:first-child {
         justify-content: space-between;
@@ -796,7 +825,114 @@ footer nav {
         justify-content: flex-end;
     }
 }
-
+@media (max-width: 700px) {
+    .content {
+        text-align: center;
+    }
+    .content-description {
+        margin: 0 auto 59px;
+        padding-left: 0;
+    }
+    .hiro-link {
+        margin-left: 0;
+    }
+    .events-date,
+    .events-item-text-bottom,
+    .nav-link-modal,
+    .footer-email {
+        font-size: 12px;
+    }
+    .content-title,
+    .content-text, 
+    .events-title,
+    .timeline-title,
+    .subscribing-title,
+    .about-grid-header {
+        font-size: 26px;
+    }
+    .content-description,
+    .timeline-date-text,
+    .content-date,
+    .text-hidden,
+    .timeline-grid-item-title,
+    .events-item-title,
+    .about-grid-text,
+    .about-grid-title,
+    .about-grid-content {
+        font-size: 16px;
+    }
+    .footer-copyright {
+        font-size: 10px;
+    }
+    .subscribing-title::before {
+        width: 31px;
+        height: 31px;
+        left: -17px;
+        top: 38px;
+    }
+    .subscribing-form {
+      flex-direction: column;
+      align-items: center;
+    }
+    .subscribing-btn {
+        order: 1;
+    }
+    .footer-email::before {
+        width: 20px;
+        height: 20px;
+        left: -10px;
+        top: -10px;
+    }
+    .events-item-text-bottom {
+        left: 0;
+        bottom: 0;
+        display: table;
+    }
+}
+@media (max-width: 600px) {
+    .item-right .events-item-title {
+        max-width: 117px;
+    }
+}
+@media (max-width: 500px) {
+    .events-grid-items {
+        height: 50vw;
+        min-height: 310px;
+        min-width: 165px;
+    }  
+    .events-link {
+        display: none;
+    }
+    ._content {
+        flex-direction: column;
+    }
+    ._about {
+        display: flex;
+        flex-direction: column;
+    }
+    .about-grid-title {
+        margin-bottom: 10px;
+    }
+    .about-grid-content {
+        margin-top: 0;
+    }
+    .about-grid-btn {
+        align-self: center;
+    }
+    .footer-item:first-child {
+        flex-direction: column;
+        align-items: center
+    }
+    .footer-logo {
+        width: 97px;
+        height: 30px;
+        align-self: center;
+    }
+    .footer-item:last-child {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 @media (max-width: 340px) {
     .header-btn {
         display: block;
