@@ -797,6 +797,8 @@ footer nav {
     ._image {
         order: 1;
         height: 54vw;
+        margin-top: 0;
+        margin-left: 0;
     }
     .about-grid-item-text {
         flex-basis: 45%;
