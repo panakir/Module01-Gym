@@ -10,6 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="android" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="android" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="image/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
     <!--Шапка сайта-->
@@ -65,6 +74,7 @@
                         <h3 class="events-item-title">Марафон выносливости</h3>
                         <a href="#" class="events-link">Участвовать</a>
                         <span class="events-item-text-bottom">марафон</span>
+                        <button class="event-mobile-btn"></button>
                     </div>
                 </div>
                 <div class="events-grid-items item-center">
@@ -73,6 +83,7 @@
                         <h3 class="events-item-title">Как стать тренером?</h3>
                         <a href="#" class="events-link">Участвовать</a>
                         <span class="events-item-text-bottom">вебинар</span>
+                        <button class="event-mobile-btn"></button>
                     </div>
                 </div>
                 <div class="events-grid-items item-right">
@@ -81,6 +92,7 @@
                         <h3 class="events-item-title">Йога, как стиль жизни</h3>
                         <a href="#" class="events-link">Участвовать</a>
                         <span class="events-item-text-bottom">вебинар</span>
+                        <button class="event-mobile-btn"></button>
                     </div>
                 </div>
             </div>
@@ -153,7 +165,7 @@
             <div class="subscribing-header">
                 <h2 class="subscribing-title">Подпишитесь на рассылку</h2>
             </div>
-            <form class="subscribing-form">
+            <form action="#" class="subscribing-form">
                 <input class="subscribing-email" type="email"placeholder="Ваш e-mail">
                 <button class="subscribing-btn" type="submit">подписаться</button>
                 <div class="check01">
@@ -172,7 +184,7 @@
                     <p class="about-grid-text">
                         Наша компания является одной из немногих, кто предлагает фитнес услуги онлайн! Оставайтесь с&nbsp;нами и вы сами увидите, что мы проводим не&nbsp;только онлайн-тренировки.
                     </p>
-                    <a href="#" class="about-grid-btn">Записаться</a>
+                    <button class="about-grid-btn" onclick="openModalReg()">Записаться</button>
                 </div>
                 <div class="about-grid-item _image">
                     <div class="about-grid-cover"> 
@@ -247,6 +259,22 @@
         </div>
         <button class="burger-close" onclick="closeModal()"></button>
     </div>
+    <!-- Модальное окно регистрации -->
+    <div class="modal-reg" id="modal-reg">
+        <div class="modal-reg-box">
+            <div class="reg-header">
+                <h3 class="reg_title">Заявка на участие «Марафон выносливости»</h3>
+                <p class="reg_text">Заполните все поля, и мы пришлем информацию в ближайшее время</p>
+            </div>
+            <form action="#" class="modal-reg-form">
+                <input class="reg-mail" type="email" placeholder="Ваш e-mail">
+                <input class="reg-tel" type="tel" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" placeholder="Ваш номер телефона">
+                <button type="submit">Отправить</button>
+            </form>
+            <button class="reg-close" onclick="closeModalReg()"></button>
+        </div>
+    </div>
+
     <script>
          // Menu
          function openModal() {
@@ -255,6 +283,15 @@
 
         function closeModal() {
             document.getElementById("modal").style.top = "-400px";
+        } 
+
+        // Registration
+        function openModalReg() {
+            document.getElementById("modal-reg").style.display = "block";
+        }
+
+        function closeModalReg() {
+            document.getElementById("modal-reg").style.display = "none";
         } 
 
          // Smooth Scroll

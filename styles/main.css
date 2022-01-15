@@ -159,13 +159,13 @@ header {
     position: relative;
 }
 .item-left {
-    background-image: url(../images/files/@1x/maraphon\ clean.png);
+    background-image: url(../images/files/@1x/maraphon.png);
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center center;
 }
 .item-center {
-    background-image: url(../images/files/@1x/Vebinar\ 1\ clean.png);
+    background-image: url(../images/files/@1x/Vebinar\ 1.png);
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: center center;
@@ -233,6 +233,17 @@ header {
     bottom: 0;
     right: 0;
     opacity: 1;
+}
+.event-mobile-btn {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icons/events-btn.svg);
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
 }
 .timeline {
     margin-bottom: 160px;
@@ -358,8 +369,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    max-width: 640px;
-    position: relative;
+    max-width: 642px;
     z-index: 1;
     padding-bottom: 83px;
 }
@@ -368,6 +378,7 @@ header {
     font-weight: 700;
     padding-top: 50px;
     position: relative;
+    z-index: 1;
 }
 .subscribing-title::before {
     content: '';
@@ -393,7 +404,7 @@ header {
     width: 335px;
     margin-top: 10px;
     margin-left: 19px;
-    padding: 19px;
+    padding: 20px 0 23px 20px;
     border: none;
     background: #FFFFFF;
     color: rgba(43, 53, 65, .3);
@@ -495,8 +506,10 @@ label {
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
+    color: #2B3541;
     background: #FBF138;
     padding: 22px 54px;
+    border: none;
 }
 .about-grid-btn:hover {
     background: #2B3541;
@@ -706,6 +719,107 @@ footer nav {
     right: 10px;
 }
 
+/* Modal wondow registration */
+#modal-reg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: none;
+}
+.modal-reg-box {
+    width: 600px;
+    height: 577px;
+    background: #F3F3F3;
+    margin: 0 auto;
+    position: relative;
+}
+.reg-header {
+    max-width: 410px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+.reg_title {
+    font-size: 28px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+.reg_title::before {
+    content: '';
+    width: 53px;
+    height: 53px;
+    border-radius: 100%;
+    background: #FBF138;
+    box-shadow: 0px 13px 24px rgba(251, 241, 56, 0.3);
+    position: absolute;
+    left: 30px;
+    top: -35px;
+    z-index: -1;
+}
+.reg_text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.modal-reg-form {
+    width: 500px;
+    margin: 0 auto;
+}
+.reg-mail [placeholder] {
+    color: rgba(43, 53, 65, .3);
+}
+.reg-mail,
+.reg-tel {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 19px 0 19px 19px;
+    border: none;
+    background: #FFFFFF;
+    align-items: center;
+    outline: none;
+    display: block;
+    margin: 0 auto 20px;
+    width: 96%;
+}   
+.reg-mail:focus,
+.reg-tel:focus {
+    background: #F3F3F3;
+    color: #2B3541;
+}
+.reg-mail:invalid,
+.reg-tel:invalid  {
+    border: 1px solid #AE0303;
+}
+.modal-reg-form button {
+    font-size: 16px;
+    font-weight: 700;
+    background: #FBF138;
+    border: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 20px;
+    margin: 40px auto 0;
+    width: 100%;
+    cursor: pointer;
+}
+.reg-close {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-image: url(../images/icons/close.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+
+
 /* Responsive */ 
 
 @media (max-width: 1550px) {
@@ -863,6 +977,15 @@ footer nav {
     .about-grid-content {
         font-size: 16px;
     }
+    .events-grid {
+        gap: 10px;
+    }
+    .events-grid-items {
+        height: 75vw;
+    }
+    .events-link {
+        display: none;
+    }
     .footer-copyright {
         font-size: 10px;
     }
@@ -875,6 +998,18 @@ footer nav {
     .subscribing-form {
       flex-direction: column;
       align-items: center;
+      flex-basis: 100%;
+    }
+    .subscribing-email {
+        width: 45%;
+        min-width: 255px;
+        margin-left: 0;
+    }
+    #check01+label::before {
+        margin-left: 0;
+    }
+    label {
+        margin-left: 23px;
     }
     .subscribing-btn {
         order: 1;
@@ -889,6 +1024,31 @@ footer nav {
         left: 0;
         bottom: 0;
         display: table;
+        padding: 8px 15px;
+    }
+    .event-mobile-btn {
+        display: block;
+    }
+
+/* modal windiw registration */
+    .modal-reg-box {
+        width: 360px;
+        height: 505px;
+    }
+    .reg_title {
+        font-size: 16px;
+    }
+    .reg_title::before {
+        width: 31px;
+        height: 31px;
+        left: 34px;
+        top: -22px;
+    }
+    .reg_text {
+        font-size: 16px;
+    }
+    .modal-reg-form {
+        width: 340px;
     }
 }
 @media (max-width: 600px) {
@@ -897,13 +1057,29 @@ footer nav {
     }
 }
 @media (max-width: 500px) {
+    .content {
+        text-align: left;
+    }
+    .hiro-link {
+        display: block;
+        text-align: center;
+    }
+    .content-description {
+        margin: 0 0 59px;
+    }
+    .hiro-link {
+        text-align: center;
+    }
     .events-grid-items {
-        height: 50vw;
-        min-height: 310px;
-        min-width: 165px;
-    }  
-    .events-link {
-        display: none;
+        height: 100vw;
+        min-width: 145px;
+    }
+    .subscribing-title {
+        text-align: center;
+        display:table-caption;
+    }
+    .subscribing-btn {
+        width: 95%;
     }
     ._content {
         flex-direction: column;
@@ -920,6 +1096,7 @@ footer nav {
     }
     .about-grid-btn {
         align-self: center;
+        width: 100%;
     }
     .footer-item:first-child {
         flex-direction: column;
@@ -939,7 +1116,10 @@ footer nav {
         align-items: center;
     }
 }
-@media (max-width: 340px) {
+@media (max-width: 360px) {
+    .subscribing-email {
+        width: 82%;
+    }
     .header-btn {
         display: block;
     }
