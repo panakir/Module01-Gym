@@ -23,24 +23,26 @@
 <body>
     <!--Шапка сайта-->
     <header>
-        <div class="header-box">
-            <div class="header-item first-item">
-                <a href="#" class="header-logo"></a>
-                <nav>
-                    <ul class="header-nav">
-                        <li><a class="nav-link" href="">Мероприятия</a></li>
-                        <li><a class="nav-link" href="">Расписание</a></li>
-                        <li><a class="nav-link" href="">О компании</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <!--Адаптивная кнопка меню-->
-             <div class="header-btn">
-                <button class="burger-btn" onclick="openModal()"></button>
-             </div>
-            <div class="header-item">
-                <a class="icon-instagram" href="https://www.instagram.com/"></a>
-                <a class="icon-facebook" href="https://www.facebook.com/" ></a>
+        <div class="container">
+            <div class="header-box">
+                <div class="header-item first-item">
+                    <a href="#" class="header-logo"></a>
+                    <nav>
+                        <ul class="header-nav">
+                            <li><a class="nav-link" href="">Мероприятия</a></li>
+                            <li><a class="nav-link" href="">Расписание</a></li>
+                            <li><a class="nav-link" href="">О компании</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                    <!--Адаптивная кнопка меню-->
+                <div class="header-btn">
+                    <button class="burger-btn" onclick="openModal()"></button>
+                </div>
+                <div class="header-item">
+                    <a class="icon-instagram" href="https://www.instagram.com/"></a>
+                    <a class="icon-facebook" href="https://www.facebook.com/" ></a>
+                </div>
             </div>
         </div>
     </header>
@@ -50,7 +52,7 @@
             <div class="wrapper">
                 <div class="content">
                     <h1 class="content-title">онлайн тренировки любой сложности</h1>
-                    <p class="content-text"><span>>&nbsp15</span> &nbspтренировок</p>
+                    <p class="content-text"><span>>&nbsp15</span> &nbsp&nbspтренировок</p>
                     <p class="content-description">в области спортивной физиологии и нутрициологии</p>
                     <a href="#" class="hiro-link">Узнать подробнее</a>
                     <a href="#timeline" class="hiro-link-arrow"></a>
@@ -161,7 +163,8 @@
     </section>
     <!-- Блок подписки -->
     <section class="subscribing">
-        <div class="subscribing-content">
+        <div class="container">
+            <div class="subscribing-content">
             <div class="subscribing-header">
                 <h2 class="subscribing-title">Подпишитесь на рассылку</h2>
             </div>
@@ -173,6 +176,8 @@
                     <label for="check01">Согласен с обработкой&nbsp; <a class="subscribing-link" href="#"> персональных данных</a></label>
                 </div>
             </form>
+        </div>
+        
         </div>
     </section>
     <!-- О компании -->
@@ -207,6 +212,7 @@
                         <h3 class="about-grid-title">Опытный персонал</h3>
                         <p class="about-grid-content">Стаж работы у наших тренеров от 5 лет</p>
                     </div>
+                    <button class="about-grid-btn-mobile" onclick="openModalReg()">Записаться</button>
                 </div>
             </div>
         </div>
@@ -219,9 +225,9 @@
                     <img class="footer-logo" src="images/logo.svg" alt="Логотип FreeFit">
                     <nav>
                         <ul class="footer-nav">
-                            <li><a class="nav-link-modal" href="">Мероприятия</a></li>
-                            <li><a class="nav-link-modal" href="">Расписание</a></li>
-                            <li><a class="nav-link-modal" href="">О компании</a></li>
+                            <li><a class="nav-link-footer" href="">Мероприятия</a></li>
+                            <li><a class="nav-link-footer" href="">Расписание</a></li>
+                            <li><a class="nav-link-footer" href="">О компании</a></li>
                         </ul>
                     </nav>
                 </div>

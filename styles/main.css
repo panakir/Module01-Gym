@@ -24,7 +24,7 @@ header {
     align-items: center;
 }
 .first-item{
-    flex-basis: 44.3%;
+    flex-basis: 57.7%;
 }
 .header-logo {
     width: 97px;
@@ -86,8 +86,8 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     padding-top: 229px;
-    line-height: 1.27;
-    letter-spacing: 0.03em;
+    line-height: 1.25;
+    letter-spacing: 0.022em;
     margin: 0;
 }
 .content-text {
@@ -105,7 +105,7 @@ header {
     margin-bottom: 59px;
 }
 .hiro {
-    margin-bottom: 165px;
+    margin-bottom: 135px;
 }
 .hiro-link {
     font-size: 16px;
@@ -113,7 +113,7 @@ header {
     letter-spacing: 0.03em;
     color: #2B3541;
     text-transform: uppercase;
-    padding: 23px 30px 20px;
+    padding: 23px 30px;
     background: #FBF138; 
     margin-left: 92px;
 }
@@ -123,8 +123,7 @@ header {
 }
 .hiro-link-arrow {
     display: block;
-    margin-left: 91px;
-    margin-top: 203px;
+    margin-top: 205px;
     background-image: url(../images/icons/Arrow.svg);
     width: 52px;
     height: 55px;
@@ -141,12 +140,12 @@ header {
     z-index: 0;
 }
 .events {
-    margin-bottom: 127px;
+    margin-bottom: 155px;
 }
 .events-title {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 43px;
+    margin-bottom: 41px;
 }
 .events-grid {
     display: flex;
@@ -204,6 +203,7 @@ header {
     padding-left: 30px;
     margin-bottom: 64px;
     max-width: 260px;
+    margin-top: 25px;
 }
 .item-center .events-item-title {
     margin-bottom: 62px;
@@ -215,6 +215,7 @@ header {
     text-transform: uppercase;
     color:  #2B3541;
     background: #FBF138;
+    margin-left: 30px;
     padding: 22px 35px;
     opacity: 0;
     transition: .3s ease opacity;
@@ -227,7 +228,7 @@ header {
 .events-item-text-bottom {
     font-size: 18px;
     font-weight: 400;
-    padding: 13px 20px;
+    padding: 13px 22px;
     background: #FBF138;
     position: absolute;
     bottom: 0;
@@ -237,6 +238,7 @@ header {
 .event-mobile-btn {
     width: 30px;
     height: 30px;
+    border: none;
     background-image: url(../images/icons/events-btn.svg);
     background-position: center center;
     background-size: cover;
@@ -244,9 +246,6 @@ header {
     right: 0;
     bottom: 0;
     display: none;
-}
-.timeline {
-    margin-bottom: 160px;
 }
 .timeline-header {
     display: flex;
@@ -298,7 +297,7 @@ header {
     border: 1px solid rgba(43, 53, 65, .5);
     background: #FEFCFE;
 }
-.timeline-grid-item:hover {
+.timeline-grid-item:hover:not(.today) {
     box-shadow: 0px 4px 30px 0px rgba(43, 53, 65, .2);
     background: rgba(243, 243, 243, 1);
     border: none;
@@ -316,8 +315,8 @@ header {
     font-weight: 400;
     color: rgba(1, 1, 1, .7);
     position: absolute;
-    right: 30px;
-    top: 5px;
+    right: 28px;
+    top: 3px;
 }
 .item-1 img,
 .item-4 img {
@@ -343,26 +342,32 @@ header {
     margin-bottom: 28px;
     margin-top: 0;
 }
-.timeline-grid-item:hover .text-hidden {
+.timeline-grid-item:hover:not(.today) .text-hidden {
     max-height: 150px;
 }
 .timeline-grid-item-title {
     font-size: 18px;
     line-height: 1.5;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     margin-top: 40px;
 }
 .today {
     background: linear-gradient(180deg, #FBF138 0%, rgba(253, 249, 182, 0.45) 100%);
     opacity: 0.7;
+    border: none;
 }
+.today .text-hidden {
+    max-height: 150px;
+}
+
 .today:hover {
     background: linear-gradient(180deg, #FBF138 0%, rgba(253, 249, 182, 0.45) 100%);
     opacity: 0.7;
 }
 .subscribing {
     background: #F3F3F3;
+    margin-top: 80px;
 }
 .subscribing-content {
     display: flex;
@@ -394,7 +399,7 @@ header {
 }
 .subscribing-form {
     display: flex;
-    gap: 12px 19px;
+    gap: 10px 17px;
     flex-wrap: wrap;
     align-items: baseline;
 }
@@ -402,9 +407,9 @@ header {
     font-size: 18px;
     font-weight: 400;
     width: 335px;
-    margin-top: 10px;
+    margin-top: 7px;
     margin-left: 19px;
-    padding: 20px 0 23px 20px;
+    padding: 20px;
     border: none;
     background: #FFFFFF;
     color: rgba(43, 53, 65, .3);
@@ -425,7 +430,7 @@ header {
     letter-spacing: 3%;
     text-transform: uppercase;
     border: none;
-    padding: 22px 46px 23px;
+    padding: 22px 46px ;
 }
 .subscribing-btn:hover {
     background: #2B3541;
@@ -480,7 +485,7 @@ label {
 }
 .about-grid {
     display: grid;
-    gap: 64px 15px;
+    gap: 64px 0;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 365px 200px;
 }
@@ -497,12 +502,13 @@ label {
 .about-grid-text {
     font-size: 18px;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.5;
     max-width: 483px;
-    margin-top: 24px;
-    margin-bottom: 61px;
+    margin-top: 19px;
+    margin-bottom: 37px;
 }
-.about-grid-btn {
+.about-grid-btn,
+.about-grid-btn-mobile {
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -511,16 +517,20 @@ label {
     padding: 22px 54px;
     border: none;
 }
-.about-grid-btn:hover {
+.about-grid-btn-mobile {
+    display: none;
+    margin-top: 10px;
+}
+.about-grid-btn:hover, 
+.about-grid-btn-mobile:hover {
     background: #2B3541;
     color: #FBF138;
 }
 ._image {
     margin-top: 30px;
-    margin-left: 15px;
     background-image: url(../images/files/@2x/trainer@2x.png);
     background-size: cover;
-    background-position: center center ;
+    background-position: center center;
 }
 .about-grid-cover {
     width: 100%;
@@ -540,7 +550,7 @@ label {
     font-size: 18px;
     font-weight: 400;
     line-height: 1.4;
-    margin-top: 25px;
+    margin-top: 21px;
 }
 ._time {
     flex-basis: 231px;
@@ -557,7 +567,7 @@ label {
 footer {
     margin-top: 80px;
     background: #F3F3F3;
-    padding-top: 47px;
+    padding-top: 41px;
     padding-bottom: 47px;
 }
 footer nav {
@@ -574,9 +584,10 @@ footer nav {
     flex-basis: 55.3%;
     justify-content: space-between;
 }
-.nav-link-modal {
+.nav-link-footer {
     font-size: 14px;
     font-weight: 400;
+    color: #2B3541;
 }
 .footer-nav {
     display: flex;
@@ -596,9 +607,12 @@ footer nav {
 .footer-email {
     font-size: 16px;
     font-weight: 700;
-    margin-right: 30px;
+    margin-right: 36px;
+    margin-top: 13px;
     z-index: 2;
     position: relative;
+    line-height: 1.5;
+    /* margin-top: 13px; */
 }
 .footer-email::before {
     content: '';
@@ -620,7 +634,7 @@ footer nav {
     background-repeat: no-repeat;
     width: 27px;
     height: 27px;
-    margin-right: 23px;
+    margin-right: 25px;
 }
 .footer-icon-facebook {
     display: inline-block;
@@ -708,6 +722,11 @@ footer nav {
     border-top: 1px solid rgba(43, 53, 65, .5);
     border-bottom: 1px solid rgba(43, 53, 65, .5);
 }
+.nav-link-modal {
+    font-size: 14px;
+    font-weight: 400;
+    color: #2B3541;
+}
 .burger-close {
     width: 20px;
     height: 20px;
@@ -717,6 +736,7 @@ footer nav {
     position: absolute;
     top:30px;
     right: 10px;
+    background-color: transparent;
 }
 
 /* Modal wondow registration */
@@ -816,6 +836,7 @@ footer nav {
     position: absolute;
     top: 30px;
     right: 30px;
+    background-color: transparent;
 }
 
 
@@ -836,7 +857,7 @@ footer nav {
 }
 @media (max-width: 1200px) {
     .hiro {
-        margin-bottom: 43px;
+        margin-bottom: 78px;
     }
     .wrapper {
         display: block;
@@ -859,6 +880,9 @@ footer nav {
         left: 50%;
         transform: translate(-50%);
     }
+    .events-title {
+        margin-bottom: 20px;
+    }
     .footer-item:first-child {
         gap: 55px;
     }
@@ -866,7 +890,7 @@ footer nav {
 @media (max-width: 1025px) {
     header {
         margin: 0 auto;
-        padding: 30px 10px 15px;
+        padding: 29px 0 15px;
     }
     .header-nav {
         display: none;
@@ -878,7 +902,7 @@ footer nav {
         flex-basis: 0;
     }
     .visual img {
-        width: 95%;
+        width: 100%;
     }
     .events-grid {
         display: grid;
@@ -887,12 +911,10 @@ footer nav {
     .item-right {
         background-image: url(https://cdn.shopify.com/s/files/1/0300/5526/8445/articles/jivamukti-yoga-570399_900x.jpg?v=1601380394);
         grid-column: 1/3 ;
+        height: 100vw;
     }
     .events {
-        margin-bottom: 20px;
-    }
-    .timeline {
-        margin-bottom: 20px;
+        margin-bottom: 58px;
     }
     .timeline-grid {
         display: flex;
@@ -904,18 +926,23 @@ footer nav {
     .about-grid {
         display: flex;
         flex-direction: column;
+        gap: 0;
     }
     .about-grid-text {
         max-width: 100%;
+        margin-bottom: 19px;
     }
     ._image {
         order: 1;
-        height: 54vw;
+        height: 55vw;
         margin-top: 0;
         margin-left: 0;
     }
     .about-grid-item-text {
         flex-basis: 45%;
+    }
+    .about-grid-title {
+        margin-bottom: 18px;
     }
     ._content {
         gap: 10%;
@@ -945,6 +972,10 @@ footer nav {
     .content {
         text-align: center;
     }
+    .content-title {
+       max-width: 400px;
+       margin: 0;
+    }
     .content-description {
         margin: 0 auto 59px;
         padding-left: 0;
@@ -952,9 +983,13 @@ footer nav {
     .hiro-link {
         margin-left: 0;
     }
+    .visual {
+        margin-top: 61px;
+    }
     .events-date,
     .events-item-text-bottom,
     .nav-link-modal,
+    .nav-link-footer,
     .footer-email {
         font-size: 12px;
     }
@@ -986,6 +1021,40 @@ footer nav {
     .events-link {
         display: none;
     }
+    .grid-item-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 17px;
+        padding: 20px 20px 0;
+    }
+    .timeline-grid-item-title {
+        margin-top: 44px;
+        margin-bottom: 8px;
+    }
+    .text-hidden {
+        margin-bottom: 0;
+    }
+    .item-1 img,
+    .item-4 img {
+        width: 39px;
+        padding-top: 30px;
+    }
+    .item-2 img {
+        width: 34px;
+    }
+    .item-3 img {
+        width: 23px;
+        padding-top: 25px;
+    }
+    .item-5 img {
+        width: 46px;
+        padding-top: 45px;
+    }
+    .item-6 img {
+        width: 35px;
+        padding-top: 28px;
+    }
     .footer-copyright {
         font-size: 10px;
     }
@@ -1001,8 +1070,7 @@ footer nav {
       flex-basis: 100%;
     }
     .subscribing-email {
-        width: 45%;
-        min-width: 255px;
+        width: 255px;
         margin-left: 0;
     }
     #check01+label::before {
@@ -1013,6 +1081,31 @@ footer nav {
     }
     .subscribing-btn {
         order: 1;
+        padding: 22px 80px;
+    }
+    .about-grid-btn {
+        display: none;
+    }
+    .about-grid-btn-mobile {
+        display: block;
+        margin-top: 17px;
+    }
+    ._image {
+        margin-top: 40px;
+    }
+    footer {
+        background: #FFFFFF;
+        margin-top: 40px;
+    }
+    footer nav {
+        width: 100%;
+        margin-top: 27px;
+    }
+    .footer-icon-instagram {
+        margin-right: 20px;
+    }
+    .footer-item:last-child {
+        margin-top: 23px;
     }
     .footer-email::before {
         width: 20px;
@@ -1057,46 +1150,95 @@ footer nav {
     }
 }
 @media (max-width: 500px) {
+    .header-logo {
+        width: 78px;    
+        height: 24px;
+    }       
+    .icon-instagram,
+    .icon-facebook,
+    .icon-instagram-modal,
+    .icon-facebook-modal {
+        width: 26px;    
+        height: 26px;
+    }
+    .icon-instagram {
+        margin-right: 20px;
+    }
     .content {
         text-align: left;
+    }
+    .content-title {
+        font-size: 26px;
+        padding-top: 45px;
+    }
+    .content-text {
+        margin-top: 46px;
+        margin-bottom: 17px;
     }
     .hiro-link {
         display: block;
         text-align: center;
     }
     .content-description {
-        margin: 0 0 59px;
+        margin: 0 0 40px;
     }
     .hiro-link {
         text-align: center;
     }
     .events-grid-items {
-        height: 100vw;
+        height: 83vw;
         min-width: 145px;
+    }
+    .events-date {
+        padding: 20px 20px 0;
+    }
+    .events-item-title {
+        padding-left: 20px;
+        margin-top: 18px;
+    }
+    .item-right {
+        height: 89vw;
+    }
+    .timeline-title {
+        max-width: 175px;
+        margin-bottom: 16px;
+    }
+    .content-date {
+        right: 18px;
+        top: 7px;
+    }
+    .subscribing-content {
+        padding-bottom: 40px;
+        margin-bottom: 60px;
     }
     .subscribing-title {
         text-align: center;
         display:table-caption;
+        padding-top: 38px;
+        margin-bottom: 50px;
+    }
+    .subscribing-form {
+        align-items: flex-start;
+    }
+    .subscribing-email {
+        width: 300px;
     }
     .subscribing-btn {
-        width: 95%;
+        padding: 22px 102px;
+        margin-top: 38px;
     }
     ._content {
         flex-direction: column;
+        gap: 26px;
     }
     ._about {
         display: flex;
         flex-direction: column;
     }
-    .about-grid-title {
-        margin-bottom: 10px;
-    }
     .about-grid-content {
         margin-top: 0;
-    }
-    .about-grid-btn {
-        align-self: center;
-        width: 100%;
+        margin-bottom: 0;
+        max-width: 210px;
     }
     .footer-item:first-child {
         flex-direction: column;
@@ -1122,5 +1264,7 @@ footer nav {
     }
     .header-btn {
         display: block;
+        flex-basis: 22%;
     }
+
 }
