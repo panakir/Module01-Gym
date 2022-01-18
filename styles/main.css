@@ -1055,6 +1055,9 @@ footer nav {
         width: 35px;
         padding-top: 28px;
     }
+    .item-1 .text-hidden {
+        width: 320px;
+    }
     .footer-copyright {
         font-size: 10px;
     }
@@ -1216,6 +1219,10 @@ footer nav {
         display:table-caption;
         padding-top: 38px;
         margin-bottom: 50px;
+    }
+    .subscribing-title::before {
+        left: -15px;
+        top: 22px;
     }
     .subscribing-form {
         align-items: flex-start;
