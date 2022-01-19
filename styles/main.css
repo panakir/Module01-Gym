@@ -852,10 +852,10 @@ footer nav {
         gap: 25px;
     }
     .visual img {
-        right: -45vw;
+        right: -40vw;
     }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     .hiro {
         margin-bottom: 78px;
     }
