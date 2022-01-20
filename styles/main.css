@@ -52,7 +52,8 @@ header {
     border-bottom: 1px solid #2B3541;
 }
 .icon-instagram,
-.icon-instagram-modal {
+.icon-instagram-modal,
+.footer-icon-instagram {
     background-image: url(../images/icons/IN.svg);
     background-position: center center;
     background-size: cover;
@@ -62,7 +63,8 @@ header {
     margin-right: 30px;
 }
 .icon-facebook,
-.icon-facebook-modal {
+.icon-facebook-modal,
+.footer-icon-facebook {
     background-image: url(../images/icons/FB.svg);
     background-position: center center;
     background-size: cover;
@@ -71,7 +73,11 @@ header {
     height: 30px;
 }
 .icon-facebook:hover,
-.icon-instagram:hover {
+.icon-facebook-modal:hover,
+.footer-icon-facebook:hover,
+.icon-instagram:hover,
+.icon-instagram-modal:hover,
+.footer-icon-instagram:hover  {
     transform: scale(1.2666);
 }
 .wrapper {
@@ -1033,7 +1039,7 @@ footer nav {
         margin-bottom: 8px;
     }
     .text-hidden {
-        margin-bottom: 0;
+        margin-bottom: 20px;
     }
     .item-1 img,
     .item-4 img {
@@ -1184,9 +1190,6 @@ footer nav {
     }
     .content-description {
         margin: 0 0 40px;
-    }
-    .hiro-link {
-        text-align: center;
     }
     .events-grid-items {
         height: 83vw;
