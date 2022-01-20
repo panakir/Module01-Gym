@@ -1228,7 +1228,7 @@ footer nav {
         top: 22px;
     }
     .subscribing-form {
-        align-items: flex-start;
+        align-items:center;
     }
     .subscribing-email {
         width: 300px;
