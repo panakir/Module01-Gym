@@ -449,7 +449,7 @@ header {
     background: #F3F3F3;
     color: #2B3541;
 }
-.subscribing-email:invalid  {
+.subscribing-email:focus:invalid  {
     border: 1px solid #AE0303;
 }
 .subscribing-btn {
@@ -1146,7 +1146,7 @@ footer .icon-facebook {
         width: 31px;
         height: 31px;
         left: -17px;
-        top: 38px;
+        top: -12px;
     }
     .subscribing-form {
       flex-direction: column;
@@ -1303,7 +1303,8 @@ footer .icon-facebook {
         top: 22px;
     }
     .subscribing-form {
-        align-items:center;
+        align-items: flex-start;
+        flex-basis: content;
     }
     .subscribing-email {
         width: 300px;
