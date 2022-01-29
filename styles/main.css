@@ -11,7 +11,7 @@ a {
 }
 header {
     margin: 0 auto;
-    padding: 49px 98px 15px;
+    padding: 49px 0 15px;
 }
 .header-box {
     display: flex;
@@ -51,9 +51,7 @@ header {
 .nav-link:hover {
     border-bottom: 1px solid #2B3541;
 }
-.icon-instagram,
-.icon-instagram-modal,
-.footer-icon-instagram {
+.icon-instagram {
     background-image: url(../images/icons/IN.svg);
     background-position: center center;
     background-size: cover;
@@ -61,27 +59,27 @@ header {
     width: 30px;
     height: 30px;
     margin-right: 30px;
+    transform: scale(1);
+    transition: .2s ease transform;
 }
-.icon-facebook,
-.icon-facebook-modal,
-.footer-icon-facebook {
+.icon-facebook {
     background-image: url(../images/icons/FB.svg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 30px;
     height: 30px;
+    transform: scale(1);
+    transition: .2s ease transform;
 }
 .icon-facebook:hover,
-.icon-facebook-modal:hover,
-.footer-icon-facebook:hover,
-.icon-instagram:hover,
-.icon-instagram-modal:hover,
-.footer-icon-instagram:hover  {
+.icon-instagram:hover {
     transform: scale(1.2666);
 }
 .wrapper {
     display: flex;
+    flex-wrap: wrap;
+    position: relative;
 }
 .content {
     max-width: 676px;
@@ -102,12 +100,14 @@ header {
     margin-top: 40px;
     margin-bottom: 25px;
 }
+.content-textarea {
+    margin-left: 92px;
+}
 .content-description {
     max-width: 293px;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.45;
-    padding-left: 92px;
     margin-bottom: 59px;
 }
 .hiro {
@@ -120,8 +120,7 @@ header {
     color: #2B3541;
     text-transform: uppercase;
     padding: 23px 30px;
-    background: #FBF138; 
-    margin-left: 92px;
+    background: #FBF138;
 }
 .hiro-link:hover {
     background: #2B3541;
@@ -138,11 +137,32 @@ header {
     transform: scale(1.05);
 }
 .visual {
-    position: relative;
+    position: absolute;
+    display: flex;
+    max-width: 790px;
+    width: 100%;
+    gap: 20px;
+    z-index: -1;
+    left: 430px;
 }   
+.visual-bg-left {
+    background: linear-gradient(90deg, rgba(251, 241, 56, 0.2) 0%, rgba(253, 249, 182, 0.45) 145.23%);
+    flex-grow: 1;
+    z-index: -1;
+    width: 535px;
+    height: 850px;
+}
+.visual-bg-right {
+    background: linear-gradient(90deg, rgba(253, 249, 182, 0.2) 0%, rgba(253, 249, 182, 0.7) 166.81%);
+    flex-basis: 30%;
+    z-index: -1;
+    width: 235px;
+    height: 850px;
+}
 .visual img {
     position: absolute;
-    right: -650px;
+    left: -95px;
+    top: 40px;
     z-index: 0;
 }
 .events {
@@ -240,6 +260,7 @@ header {
     bottom: 0;
     right: 0;
     opacity: 1;
+    transition: .3s ease opacity;
 }
 .event-mobile-btn {
     width: 30px;
@@ -302,6 +323,8 @@ header {
 .timeline-grid-item {
     border: 1px solid rgba(43, 53, 65, .5);
     background: #FEFCFE;
+    box-sizing: border-box;
+    transition: .3s linear border;
 }
 .timeline-grid-item:hover:not(.today) {
     box-shadow: 0px 4px 30px 0px rgba(43, 53, 65, .2);
@@ -345,7 +368,6 @@ header {
     overflow: hidden;
     max-height: 0;
     transition: 0.3s linear;
-    margin-bottom: 28px;
     margin-top: 0;
 }
 .timeline-grid-item:hover:not(.today) .text-hidden {
@@ -355,7 +377,7 @@ header {
     font-size: 18px;
     line-height: 1.5;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 40px;
 }
 .today {
@@ -373,7 +395,9 @@ header {
 }
 .subscribing {
     background: #F3F3F3;
-    margin-top: 80px;
+    margin-top: 160px;
+    padding-top: 50px;
+    padding-bottom: 83px;
 }
 .subscribing-content {
     display: flex;
@@ -382,12 +406,10 @@ header {
     margin: 0 auto;
     max-width: 642px;
     z-index: 1;
-    padding-bottom: 83px;
 }
 .subscribing-title {
     font-size: 40px;
     font-weight: 700;
-    padding-top: 50px;
     position: relative;
     z-index: 1;
 }
@@ -400,7 +422,7 @@ header {
     box-shadow: 0px 13px 24px rgba(251, 241, 56, 0.3);
     position: absolute;
     left: -30px;
-    top: 30px;
+    top: -25px;
     z-index: -1;
 }
 .subscribing-form {
@@ -487,11 +509,11 @@ label {
     color: #2B3541;
 }
 .about {
-    margin-top: 132px;
+    margin-top: 165px;
 }
 .about-grid {
     display: grid;
-    gap: 64px 0;
+    gap: 32px 0;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 365px 200px;
 }
@@ -503,7 +525,7 @@ label {
 .about-grid-header {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 0;
+    margin: 0;
 }
 .about-grid-text {
     font-size: 18px;
@@ -533,7 +555,6 @@ label {
     color: #FBF138;
 }
 ._image {
-    margin-top: 30px;
     background-image: url(../images/files/@2x/trainer@2x.png);
     background-size: cover;
     background-position: center center;
@@ -595,6 +616,9 @@ footer nav {
     font-weight: 400;
     color: #2B3541;
 }
+.nav-link-footer:hover {
+    border-bottom: 1px solid #2B3541;
+}
 .footer-nav {
     display: flex;
     justify-content: space-between;
@@ -632,7 +656,7 @@ footer nav {
     top: -15px;
     z-index: -1;
 }
-.footer-icon-instagram {
+footer .icon-instagram {
     display: inline-block;
     background-image: url(../images/icons/IN.svg);
     background-position: center center;
@@ -642,7 +666,7 @@ footer nav {
     height: 27px;
     margin-right: 25px;
 }
-.footer-icon-facebook {
+footer .icon-facebook {
     display: inline-block;
     background-image: url(../images/icons/FB.svg);
     background-position: center center;
@@ -857,35 +881,33 @@ footer nav {
     .first-item {
         gap: 25px;
     }
-    .visual img {
-        right: -40vw;
+    .content-title {
+        font-size: 38px;
+    }
+    .hiro-link-arrow {
+       margin-top: 230px;
+    }
+    .visual {
+        left: 23vw;
     }
 }
 @media (max-width: 1300px) {
     .hiro {
         margin-bottom: 78px;
     }
-    .wrapper {
-        display: block;
-    }
-    .content {
-        margin: 0 auto;
-    }
-    .content-title {
-        padding-top: 100px;
-    }
-    .hiro-link-arrow {
-        display: none;
-    }
-    .visual {
-        margin-top: 83px;
+    .visual-bg-left,
+    .visual-bg-right {
+        height: 805px;
     }
     .visual img {
-        position: relative;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%);
+       height: 765px;
     }
+    .visual {
+        left: 21vw;
+    }
+    .hiro-link-arrow {
+        margin-top: 185px;
+     }
     .events-title {
         margin-bottom: 20px;
     }
@@ -893,7 +915,25 @@ footer nav {
         gap: 55px;
     }
 }
-@media (max-width: 1025px) {
+@media (max-width: 1150px) {
+    .content-title {
+        font-size: 34px;
+    }
+    .content {
+        max-width: 600px;
+    }
+     .hiro-link-arrow {
+        margin-top: 155px;
+    }
+    .visual-bg-left,
+    .visual-bg-right {
+        height: 765px;
+    }
+    .visual img {
+       height: 725px;
+    }
+}
+@media (max-width: 1050px) {
     header {
         margin: 0 auto;
         padding: 29px 0 15px;
@@ -907,8 +947,35 @@ footer nav {
     .first-item {
         flex-basis: 0;
     }
+    .wrapper {
+        justify-content: center;
+    }
+    .content {
+        margin: 0 auto;
+    }
+    .content-title {
+        font-size: 48px;
+        width: 676px;
+        padding-top: 100px;
+    }
+    .hiro-link-arrow {
+        display: none;
+    }
+    .visual {
+        position: relative;
+        left: 0;
+        max-width: 100%;
+        height: 100%;
+        margin-top: 83px;
+    }
+    .visual-bg-left,
+    .visual-bg-right {
+        height: 90vw;
+    }
     .visual img {
+        left: 0;
         width: 100%;
+        height: 90%;
     }
     .events-grid {
         display: grid;
@@ -917,7 +984,7 @@ footer nav {
     .item-right {
         background-image: url(https://cdn.shopify.com/s/files/1/0300/5526/8445/articles/jivamukti-yoga-570399_900x.jpg?v=1601380394);
         grid-column: 1/3 ;
-        height: 100vw;
+        height: 600px;
     }
     .events {
         margin-bottom: 58px;
@@ -955,6 +1022,9 @@ footer nav {
         justify-content: space-between;
         flex-wrap: wrap;
     }
+    .about-grid-btn {
+        margin: 30px 0;
+    }
     .footer-item:first-child {
         justify-content: space-between;
         flex-basis: 100%;
@@ -962,12 +1032,14 @@ footer nav {
     }
     footer nav {
         min-width: 300px;
-        width: 74%;
+        width: 55%;
     }
     .footer-nav {
         gap: 0;
         justify-content: space-between;
-        flex-basis: 74%;
+    }
+    .footer-email {
+        margin-top: 20px;
     }
     .footer-item:nth-child(2) {
         flex-basis: 100%;
@@ -980,11 +1052,14 @@ footer nav {
     }
     .content-title {
        max-width: 400px;
-       margin: 0;
+       margin: 0 auto;
     }
     .content-description {
         margin: 0 auto 59px;
         padding-left: 0;
+    }
+    .content-textarea {
+        margin-left: 0;
     }
     .hiro-link {
         margin-left: 0;
@@ -1029,8 +1104,8 @@ footer nav {
     }
     .grid-item-content {
         flex-direction: row;
-        flex-wrap: wrap;
         justify-content: start;
+        align-items: inherit;
         gap: 17px;
         padding: 20px 20px 0;
     }
@@ -1041,25 +1116,24 @@ footer nav {
     .text-hidden {
         margin-bottom: 20px;
     }
+    .timeline-grid-item {
+        height: 152px;
+    }
     .item-1 img,
     .item-4 img {
         width: 39px;
-        padding-top: 30px;
     }
     .item-2 img {
         width: 34px;
     }
     .item-3 img {
         width: 23px;
-        padding-top: 25px;
     }
     .item-5 img {
         width: 46px;
-        padding-top: 45px;
     }
     .item-6 img {
         width: 35px;
-        padding-top: 28px;
     }
     .item-1 .text-hidden {
         width: 320px;
