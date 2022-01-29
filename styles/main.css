@@ -46,6 +46,7 @@ header {
 .nav-link {
     color: #2B3541;
     font-size: 18px;
+    padding-bottom: 10px;
     font-weight: 400;
 }    
 .nav-link:hover {
