@@ -47,7 +47,7 @@
         </div>
     </header>
     <!-- Баннер -->
-    <div class="hiro">
+    <div class="hero">
         <div class="container">
             <div class="wrapper">
                 <div class="content">
@@ -55,14 +55,14 @@
                     <p class="content-text"><span>>&nbsp15</span> &nbsp&nbspтренировок</p>
                     <div class="content-textarea">
                         <p class="content-description">в области спортивной физиологии и нутрициологии</p>
-                        <a href="#" class="hiro-link">Узнать подробнее</a>
+                        <a href="#" class="hero-link">Узнать подробнее</a>
                     </div>
-                    <a href="#timeline" class="hiro-link-arrow"></a>
+                    <a href="#timeline" class="hero-link-arrow"></a>
                 </div>
                 <div class="visual">
-                        <div class="visual-bg-left"></div>
-                        <div class="visual-bg-right"></div>
-                    <img src="images/files/@1x/Image 1 screen.png" alt="">
+                    <div class="visual-bg-left"></div>
+                    <div class="visual-bg-right"></div>
+                    <div class="visual-img"></div>
                 </div>
             </div>
         </div>  
@@ -80,7 +80,7 @@
                         <h3 class="events-item-title">Марафон выносливости</h3>
                         <a href="#" class="events-link">Участвовать</a>
                         <span class="events-item-text-bottom">марафон</span>
-                        <button class="event-mobile-btn"></button>
+                        <button class="events-mobile-btn"></button>
                     </div>
                 </div>
                 <div class="events-grid-items item-center">
@@ -89,7 +89,7 @@
                         <h3 class="events-item-title">Как стать тренером?</h3>
                         <a href="#" class="events-link">Участвовать</a>
                         <span class="events-item-text-bottom">вебинар</span>
-                        <button class="event-mobile-btn"></button>
+                        <button class="events-mobile-btn"></button>
                     </div>
                 </div>
                 <div class="events-grid-items item-right">
@@ -98,7 +98,7 @@
                         <h3 class="events-item-title">Йога, как стиль жизни</h3>
                         <a href="#" class="events-link">Участвовать</a>
                         <span class="events-item-text-bottom">вебинар</span>
-                        <button class="event-mobile-btn"></button>
+                        <button class="events-mobile-btn"></button>
                     </div>
                 </div>
             </div>
@@ -249,7 +249,7 @@
                     </nav>
                 </div>
                 <div class="footer-item">
-                    <p class="footer-email">info@freefit.com</p>
+                    <a class="footer-email" href="mailto:ponokir@gmail.com">info@freefit.com</a>
                     <div class="footer-link">
                         <a class="icon-instagram" href="https://www.instagram.com/"></a>
                         <a class="icon-facebook" href="https://www.facebook.com/" ></a>
@@ -318,7 +318,7 @@
         } 
 
          // Smooth Scroll
-        const links = document.querySelectorAll(".hiro-link-arrow");
+        const links = document.querySelectorAll(".hero-link-arrow");
 
         for (const link of links) {
             link.addEventListener("click", clickHandler);

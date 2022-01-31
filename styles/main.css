@@ -48,6 +48,8 @@ header {
     font-size: 18px;
     padding-bottom: 10px;
     font-weight: 400;
+    border-bottom: 1px solid transparent;
+    transition: .2s ease;
 }    
 .nav-link:hover {
     border-bottom: 1px solid #2B3541;
@@ -71,26 +73,29 @@ header {
     width: 30px;
     height: 30px;
     transform: scale(1);
-    transition: .2s ease transform;
+    transition: .2s ease;
 }
 .icon-facebook:hover,
 .icon-instagram:hover {
     transform: scale(1.2666);
 }
+.hero {
+    margin-bottom: 135px;
+    max-width: 100%;
+}
 .wrapper {
-    display: flex;
-    flex-wrap: wrap;
     position: relative;
 }
 .content {
     max-width: 676px;
     z-index: 1;
+    padding-top: 229px;
 }
 .content-title {
     font-size: 48px;
     font-weight: 700;
     text-transform: uppercase;
-    padding-top: 229px;
+    
     line-height: 1.25;
     letter-spacing: 0.022em;
     margin: 0;
@@ -111,10 +116,7 @@ header {
     line-height: 1.45;
     margin-bottom: 59px;
 }
-.hiro {
-    margin-bottom: 135px;
-}
-.hiro-link {
+.hero-link {
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.03em;
@@ -122,49 +124,56 @@ header {
     text-transform: uppercase;
     padding: 23px 30px;
     background: #FBF138;
+    transition: .2s ease;
 }
-.hiro-link:hover {
+.hero-link:hover {
     background: #2B3541;
     color: #FBF138;
 }
-.hiro-link-arrow {
+.hero-link-arrow {
     display: block;
     margin-top: 205px;
     background-image: url(../images/icons/Arrow.svg);
     width: 52px;
     height: 55px;
+    transition: .2s ease;
 }
-.hiro-link-arrow:hover {
+.hero-link-arrow:hover {
     transform: scale(1.05);
 }
 .visual {
-    position: absolute;
-    display: flex;
-    max-width: 790px;
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -75px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: 20px;
     z-index: -1;
-    left: 430px;
 }   
 .visual-bg-left {
     background: linear-gradient(90deg, rgba(251, 241, 56, 0.2) 0%, rgba(253, 249, 182, 0.45) 145.23%);
-    flex-grow: 1;
-    z-index: -1;
     width: 535px;
-    height: 850px;
+    height: 100%;
 }
 .visual-bg-right {
     background: linear-gradient(90deg, rgba(253, 249, 182, 0.2) 0%, rgba(253, 249, 182, 0.7) 166.81%);
-    flex-basis: 30%;
-    z-index: -1;
     width: 235px;
-    height: 850px;
+    height: 100%;
 }
-.visual img {
+.visual-img {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    left: -95px;
-    top: 40px;
-    z-index: 0;
+    display: block;
+    top: 0px;
+    right: -96px;
+    background: url(../images/files/@1x/Image\ 1\ screen.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
 }
 .events {
     margin-bottom: 155px;
@@ -206,6 +215,7 @@ header {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(251, 241, 56, .3) 0%, rgba(253, 249, 182, 0) 100%);
+    transition: .2s ease;
 }
 .events-grid-cover:hover {
     background: linear-gradient(180deg, rgba(251, 241, 56, .6) 0%, rgba(253, 249, 182, 0) 100%);
@@ -245,7 +255,7 @@ header {
     margin-left: 30px;
     padding: 22px 35px;
     opacity: 0;
-    transition: .3s ease opacity;
+    transition: .2s ease;
     cursor: pointer;
 }
 .events-link:hover {
@@ -263,7 +273,7 @@ header {
     opacity: 1;
     transition: .3s ease opacity;
 }
-.event-mobile-btn {
+.events-mobile-btn {
     width: 30px;
     height: 30px;
     border: none;
@@ -368,7 +378,7 @@ header {
     font-size: 18px;
     overflow: hidden;
     max-height: 0;
-    transition: 0.3s linear;
+    transition: 0.2s linear;
     margin-top: 0;
 }
 .timeline-grid-item:hover:not(.today) .text-hidden {
@@ -388,11 +398,6 @@ header {
 }
 .today .text-hidden {
     max-height: 150px;
-}
-
-.today:hover {
-    background: linear-gradient(180deg, #FBF138 0%, rgba(253, 249, 182, 0.45) 100%);
-    opacity: 0.7;
 }
 .subscribing {
     background: #F3F3F3;
@@ -460,6 +465,7 @@ header {
     text-transform: uppercase;
     border: none;
     padding: 22px 46px ;
+    transition: .2s ease;
 }
 .subscribing-btn:hover {
     background: #2B3541;
@@ -501,14 +507,6 @@ label {
 #check01:checked+label::before {
     background-image: url(../images/icons/done.svg);
 }
-.subscribing-link {
-    color: inherit;  
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-.subscribing-link:hover {
-    color: #2B3541;
-}
 .about {
     margin-top: 165px;
 }
@@ -545,6 +543,7 @@ label {
     background: #FBF138;
     padding: 22px 54px;
     border: none;
+    transition: .2s ease;
 }
 .about-grid-btn-mobile {
     display: none;
@@ -556,6 +555,7 @@ label {
     color: #FBF138;
 }
 ._image {
+    height: 335px;
     background-image: url(../images/files/@2x/trainer@2x.png);
     background-size: cover;
     background-position: center center;
@@ -596,7 +596,7 @@ footer {
     margin-top: 80px;
     background: #F3F3F3;
     padding-top: 41px;
-    padding-bottom: 47px;
+    padding-bottom: 20px;
 }
 footer nav {
     min-width: 461px;
@@ -611,11 +611,14 @@ footer nav {
     display: flex;
     flex-basis: 55.3%;
     justify-content: space-between;
+    align-items: center;
 }
 .nav-link-footer {
     font-size: 14px;
     font-weight: 400;
     color: #2B3541;
+    border-bottom: 1px solid transparent;
+    transition: .2s ease border-bottom;
 }
 .nav-link-footer:hover {
     border-bottom: 1px solid #2B3541;
@@ -643,7 +646,7 @@ footer nav {
     z-index: 2;
     position: relative;
     line-height: 1.5;
-    /* margin-top: 13px; */
+    color: #2B3541;
 }
 .footer-email::before {
     content: '';
@@ -689,11 +692,11 @@ footer .icon-facebook {
 .footer-copyright a {
     color: rgba(43, 53, 65, 0.3);
     text-decoration: underline;
-    text-underline-offset: 2px solid rgba(43, 53, 65, 0.3);   
+    text-underline-offset: 2px solid rgba(43, 53, 65, 0.3); 
+    transition: .2s ease color;
 }
 .footer-copyright a:hover {
-   opacity: 1;
-   color: #2B3541;
+    color: rgba(43, 53, 65, 1)
 }
 
 /* Header modal window */
@@ -885,28 +888,26 @@ footer .icon-facebook {
     .content-title {
         font-size: 38px;
     }
-    .hiro-link-arrow {
+    .hero-link-arrow {
        margin-top: 230px;
     }
     .visual {
-        left: 23vw;
+        right: 0;
+    }
+}
+@media (max-width: 1370px) {
+    .visual-img {
+        right: 0;
+    }
+    .content-title {
+        max-width: 666px;
     }
 }
 @media (max-width: 1300px) {
-    .hiro {
+    .hero {
         margin-bottom: 78px;
     }
-    .visual-bg-left,
-    .visual-bg-right {
-        height: 805px;
-    }
-    .visual img {
-       height: 765px;
-    }
-    .visual {
-        left: 21vw;
-    }
-    .hiro-link-arrow {
+    .hero-link-arrow {
         margin-top: 185px;
      }
     .events-title {
@@ -922,16 +923,19 @@ footer .icon-facebook {
     }
     .content {
         max-width: 600px;
+        padding: 160px 0;
     }
-     .hiro-link-arrow {
-        margin-top: 155px;
+    .content-textarea {
+        margin-left: 0;
     }
-    .visual-bg-left,
+    .hero-link-arrow {
+        display: none;
+    }
+    .visual-bg-left {
+        width: 45%;
+    }
     .visual-bg-right {
-        height: 765px;
-    }
-    .visual img {
-       height: 725px;
+        width: 20%;
     }
 }
 @media (max-width: 1050px) {
@@ -948,69 +952,29 @@ footer .icon-facebook {
     .first-item {
         flex-basis: 0;
     }
-    .wrapper {
-        justify-content: center;
-    }
-    .content {
-        margin: 0 auto;
-    }
-    .content-title {
-        font-size: 48px;
-        width: 676px;
-        padding-top: 100px;
-    }
-    .hiro-link-arrow {
-        display: none;
-    }
-    .visual {
-        position: relative;
-        left: 0;
-        max-width: 100%;
-        height: 100%;
-        margin-top: 83px;
-    }
-    .visual-bg-left,
-    .visual-bg-right {
-        height: 90vw;
-    }
-    .visual img {
-        left: 0;
-        width: 100%;
-        height: 90%;
-    }
-    .events-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .item-right {
-        background-image: url(https://cdn.shopify.com/s/files/1/0300/5526/8445/articles/jivamukti-yoga-570399_900x.jpg?v=1601380394);
-        grid-column: 1/3 ;
-        height: 600px;
-    }
     .events {
         margin-bottom: 58px;
+    }
+    .events-grid-items {
+        height: 60vw;
+    }
+    .events-item-title {
+        font-size: 20px;
     }
     .timeline-grid {
         display: flex;
         flex-direction: column;
     }
-    .about {
-        margin-top: 20px;
-    }
     .about-grid {
         display: flex;
-        flex-direction: column;
-        gap: 0;
+        flex-wrap: wrap;
+        gap: 20px;
     }
-    .about-grid-text {
-        max-width: 100%;
-        margin-bottom: 19px;
+    ._about {
+        flex-basis: 48%;
     }
     ._image {
-        order: 1;
-        height: 55vw;
-        margin-top: 0;
-        margin-left: 0;
+        flex-basis: 48%;
     }
     .about-grid-item-text {
         flex-basis: 45%;
@@ -1047,26 +1011,95 @@ footer .icon-facebook {
         justify-content: flex-end;
     }
 }
-@media (max-width: 700px) {
+@media (max-width: 950px) {
     .content {
-        text-align: center;
+        padding: 14% 0;
     }
     .content-title {
-       max-width: 400px;
-       margin: 0 auto;
+        font-size: 26px;
+        max-width: 455px;
+    }
+    .content-text {
+        font-size: 26px;
+    }
+    .footer-logo,
+    .header-logo {
+        width: 78px;    
+        height: 24px;
+    }       
+    .icon-instagram,
+    .icon-facebook,
+    .icon-instagram-modal,
+    .icon-facebook-modal {
+        width: 26px;    
+        height: 26px;
+    }
+    .icon-instagram {
+        margin-right: 20px;
+    }
+}
+@media (max-width: 815px) {
+    .events-grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .item-right {
+        background-image: url(https://cdn.shopify.com/s/files/1/0300/5526/8445/articles/jivamukti-yoga-570399_900x.jpg?v=1601380394);
+        grid-column: 1/3 ;
+    }
+    .events-link {
+        display: none;
+    }
+    .events-mobile-btn {
+        display: block;
+    }
+    .events-item-text-bottom {
+        left: 0;
+        bottom: 0;
+        display: table;
+        padding: 8px 15px;
+        opacity: 1;
+    }
+    .events-grid-items:hover .events-item-text-bottom {
+    opacity: 1;
+    }
+}
+@media (max-width: 750px) {
+    .content {
+        max-width: 100%;
+        padding: 50px 0;
+    }
+    .content-title {
+        max-width: 100%;
+        margin: 0;
+    }
+    .content-text {
+        margin-top: 15px;
+        margin-bottom: 0;
     }
     .content-description {
-        margin: 0 auto 59px;
-        padding-left: 0;
+        max-width: 100%;
+        margin-top: 15px;
+        margin-bottom: 30px;
     }
-    .content-textarea {
-        margin-left: 0;
-    }
-    .hiro-link {
-        margin-left: 0;
+    .hero-link {
+       display: block;
+       text-align: center;
     }
     .visual {
-        margin-top: 61px;
+        position: relative;
+        height: 330px;
+        justify-content: center;
+    }
+    .visual-img {
+        background-position: bottom center;
+    }
+    .visual-bg-left {
+        width: 60vw;
+    }
+    .visual-bg-right {
+        width: 35vw;
     }
     .events-date,
     .events-item-text-bottom,
@@ -1087,21 +1120,12 @@ footer .icon-facebook {
     .timeline-date-text,
     .content-date,
     .text-hidden,
-    .timeline-grid-item-title,
     .events-item-title,
+    .timeline-grid-item-title,
     .about-grid-text,
     .about-grid-title,
     .about-grid-content {
         font-size: 16px;
-    }
-    .events-grid {
-        gap: 10px;
-    }
-    .events-grid-items {
-        height: 75vw;
-    }
-    .events-link {
-        display: none;
     }
     .grid-item-content {
         flex-direction: row;
@@ -1167,6 +1191,22 @@ footer .icon-facebook {
         order: 1;
         padding: 22px 80px;
     }
+    .about {
+        margin-top: 100px;
+    }
+    .about-grid-text {
+        max-width: 100%;
+    }
+    ._about {
+        flex-basis: 100%;
+    }
+    ._image {
+        order: 1;
+        height: 55vw;
+        margin-top: 0;
+        margin-left: 0;
+        flex-basis: 100%;
+    }
     .about-grid-btn {
         display: none;
     }
@@ -1181,10 +1221,6 @@ footer .icon-facebook {
         background: #FFFFFF;
         margin-top: 40px;
     }
-    footer nav {
-        width: 100%;
-        margin-top: 27px;
-    }
     .footer-icon-instagram {
         margin-right: 20px;
     }
@@ -1196,15 +1232,6 @@ footer .icon-facebook {
         height: 20px;
         left: -10px;
         top: -10px;
-    }
-    .events-item-text-bottom {
-        left: 0;
-        bottom: 0;
-        display: table;
-        padding: 8px 15px;
-    }
-    .event-mobile-btn {
-        display: block;
     }
 
 /* modal windiw registration */
@@ -1234,20 +1261,6 @@ footer .icon-facebook {
     }
 }
 @media (max-width: 500px) {
-    .header-logo {
-        width: 78px;    
-        height: 24px;
-    }       
-    .icon-instagram,
-    .icon-facebook,
-    .icon-instagram-modal,
-    .icon-facebook-modal {
-        width: 26px;    
-        height: 26px;
-    }
-    .icon-instagram {
-        margin-right: 20px;
-    }
     .content {
         text-align: left;
     }
@@ -1259,7 +1272,7 @@ footer .icon-facebook {
         margin-top: 46px;
         margin-bottom: 17px;
     }
-    .hiro-link {
+    .hero-link {
         display: block;
         text-align: center;
     }
