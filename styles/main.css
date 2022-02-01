@@ -1153,6 +1153,10 @@ footer .icon-facebook {
     .timeline-grid-item {
         height: 152px;
     }
+    .item-3,
+    .item-4 {
+        height: 190px;
+    }
     .item-1 img,
     .item-4 img {
         width: 39px;
