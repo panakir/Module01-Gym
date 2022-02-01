@@ -471,6 +471,15 @@ header {
     background: #2B3541;
     color: #FBF138;
 }
+.subscribing-link {
+    color: rgba(43, 53, 65, .5);
+    transition: .2s ease;
+    border-bottom: 1px solid rgba(43, 53, 65, .5);
+}
+.subscribing-link:hover {
+    color: rgba(43, 53, 65, 1);
+    border-bottom: 1px solid rgba(43, 53, 65, 1);
+}
 .check01 {
     position: relative;
 }
