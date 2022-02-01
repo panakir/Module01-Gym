@@ -4,7 +4,6 @@ body {
 }
 a {
     text-decoration: none;
-    color: #2B3541;
 }
 .container {
     max-width: 1143px;
@@ -471,15 +470,6 @@ header {
 .subscribing-btn:hover {
     background: #2B3541;
     color: #FBF138;
-}
-.subscribing-link {
-    color: rgba(43, 53, 65, .5);
-    transition: .2s ease;
-    border-bottom: 1px solid rgba(43, 53, 65, .5);
-}
-.subscribing-link:hover {
-    color: rgba(43, 53, 65, 1);
-    border-bottom: 1px solid rgba(43, 53, 65, 1);
 }
 .check01 {
     position: relative;
@@ -1340,7 +1330,7 @@ footer .icon-facebook {
         flex-direction: column;
         gap: 26px;
         flex-wrap: nowrap;
-        flex-basis: 100%;
+        width: 100%;
     }
     ._about {
         display: flex;
@@ -1349,6 +1339,7 @@ footer .icon-facebook {
     .about-grid-content {
         margin-top: 0;
         margin-bottom: 0;
+        max-width: 100%;
     }
     .footer-item:first-child {
         flex-direction: column;
