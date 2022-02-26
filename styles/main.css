@@ -624,7 +624,7 @@ footer nav {
 .nav-link-footer {
     font-size: 14px;
     font-weight: 400;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     color: #2B3541;
     border-bottom: 1px solid transparent;
     transition: .2s ease;
