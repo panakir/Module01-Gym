@@ -244,6 +244,7 @@ header {
 }
 .item-center .events-item-title {
     margin-bottom: 62px;
+    max-width: 150px;
 }
 .events-link {
     font-size: 18px;
