@@ -751,7 +751,7 @@ footer .icon-facebook {
 #modal .header-item:last-child {
     align-self: flex-end;
     padding-right: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 20px;
 }
 #modal nav {
     width: inherit;
