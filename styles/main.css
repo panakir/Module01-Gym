@@ -725,22 +725,23 @@ footer .icon-facebook {
 }
 #modal {
     width: 100%;
-    background: #F3F3F3;
-    padding: 0 10px;
+    height: 100%;
+    background-color: #000000ab;
     position: absolute;
-    top: -800px;
+    top: 0;
     left: 0;
     right: 0;
     transition: 0.5s;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding-top: 30px ;
 }
 #modal .header-box {
+    background-color: #F3F3F3;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
-    width: 100%;
+    width: 100%;    
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 30px ;
 }
 #modal .first-item {
     flex-direction: column;
@@ -750,6 +751,7 @@ footer .icon-facebook {
 #modal .header-item:last-child {
     align-self: flex-end;
     padding-right: 20px;
+    padding-bottom: 80px;
 }
 #modal nav {
     width: inherit;
