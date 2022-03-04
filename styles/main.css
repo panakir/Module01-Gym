@@ -298,7 +298,7 @@ header {
     line-height: 1.25;
     max-width: 271px;
 }
-.timeline-date-text {x
+.timeline-date-text {
     font-size: 28px;
     font-weight: 700;
 }
@@ -1438,7 +1438,6 @@ footer .icon-facebook {
     }
 }
 @media (max-width: 360px) {
-    .subscribing-email {
     .subscribing-form {
         width: 100%;
     }
