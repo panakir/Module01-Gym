@@ -298,56 +298,26 @@ header {
     line-height: 1.25;
     max-width: 271px;
 }
-.timeline-date-text {
+.timeline-date-text {x
     font-size: 28px;
     font-weight: 700;
 }
 .timeline-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 250px 41px 73px 281px;
     gap: 20px;
 }
-.item-1 {
-    grid-column: 1/2;
-    grid-row: 1/2;
-}
-.item-2 {
-    grid-column: 1/2;
-    grid-row: 2/5;
-}
-.item-3 {
-    grid-column: 2/3;
-    grid-row: 1/4;
-}
-.item-4 {
-    grid-column: 2/3;
-    grid-row: 4/5;
-}
-.item-5 {
-    grid-column: 3/4;
-    grid-row: 1/3;
-}
-.item-6 {
-    grid-column: 3/4;
-    grid-row: 3/5;
-}
 .timeline-grid-item {
-    border: 1px solid rgba(43, 53, 65, .5);
     background: #FEFCFE;
-    box-sizing: border-box;
+    border: 1px solid rgba(43, 53, 65, .5);
+    overflow: hidden;
     transition: .3s linear border;
-}
-.timeline-grid-item:hover:not(.today) {
-    box-shadow: 0px 4px 30px 0px rgba(43, 53, 65, .2);
-    background: rgba(243, 243, 243, 1);
-    border: none;
 }
 .grid-item-content {
     padding: 20px 30px 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 100%;
     position: relative;
 }
@@ -355,9 +325,67 @@ header {
     font-size: 18px;
     font-weight: 400;
     color: rgba(1, 1, 1, .7);
-    position: absolute;
-    right: 28px;
-    top: 3px;
+    text-align: right;
+    margin: 0;
+}
+.text-hidden {
+    font-size: 18px;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 40px;
+    max-height: 0;
+    transition: all .2s linear;
+}
+.timeline-grid-item-title {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.today {
+    background: linear-gradient(180deg, #FBF138 0%, rgba(253, 249, 182, 0.45) 70%);
+    border: none;
+}
+.today .text-hidden {
+    max-height: 150px;
+}
+.timeline-grid-item:hover:not(.today) .text-hidden{
+    max-height: 150px;
+}
+.timeline-grid-item:hover:not(.today) {
+    box-shadow: 0px 4px 30px 0px rgba(43, 53, 65, .2);
+    background: rgba(243, 243, 243, 1);
+    border: 1px solid transparent;
+}
+.item-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 301px;
+}
+
+.item-2 {
+    grid-column: 1/2;
+    grid-row: 2/5;
+}
+.item-3 {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    height: 425px;
+}
+.item-4 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    height: 353px;
+}
+.item-5 {
+    grid-column: 3/4;
+    grid-row: 1/3;
+    height: 398px;
+}   
+.item-6 {
+    grid-column: 3/4;
+    grid-row: 3/5;
 }
 .item-1 img,
 .item-4 img {
@@ -374,30 +402,6 @@ header {
 }
 .item-6 img {
     width: 58px;
-}
-.text-hidden {
-    font-size: 18px;
-    overflow: hidden;
-    max-height: 0;
-    transition: 0.2s linear;
-    margin-top: 0;
-}
-.timeline-grid-item:hover:not(.today) .text-hidden {
-    max-height: 150px;
-}
-.timeline-grid-item-title {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 700;
-    margin-bottom: 20px;
-    margin-top: 40px;
-}
-.today {
-    background: linear-gradient(180deg, #FBF138 0%, rgba(253, 249, 182, 0.45) 70%);
-    border: none;
-}
-.today .text-hidden {
-    max-height: 150px;
 }
 .subscribing {
     background: #F3F3F3;
@@ -448,23 +452,20 @@ header {
     background: #FFFFFF;
     color: rgba(43, 53, 65, .3);
     align-items: center;
-    outline: none;
+    outline: 1px solid transparent;
 }
 .subscribing-email:focus {
     color: #2B3541;
     outline: 1px solid #FBF138;
 }
-.subscribing-email:focus:invalid  {
-    outline: 1px solid #AE0303;
-}
 .subscribing-btn {
     background: #FBF138;
     font-size: 16px;
     font-weight: 700;
-    letter-spacing: 3%;
     text-transform: uppercase;
     border: none;
-    padding: 22px 46px ;
+    padding: 22px 46px;
+    cursor: pointer;
     transition: .2s ease;
 }
 .subscribing-btn:hover {
@@ -553,6 +554,7 @@ label {
     padding: 22px 54px;
     border: none;
     transition: .2s ease;
+    cursor: pointer;
 }
 .about-grid-btn-mobile {
     display: none;
@@ -781,23 +783,30 @@ footer .icon-facebook {
     top:30px;
     right: 10px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 /* Modal wondow registration */
 #modal-reg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     z-index: 10;
     display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #000000ab;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .modal-reg-box {
     width: 600px;
     height: 577px;
     background: #F3F3F3;
     margin: 0 auto;
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .reg-header {
     max-width: 410px;
@@ -852,10 +861,7 @@ footer .icon-facebook {
 .reg-tel:focus {
     background: #F3F3F3;
     color: #2B3541;
-}
-.reg-mail:invalid,
-.reg-tel:invalid  {
-    border: 1px solid #AE0303;
+    border: 1px solid #FBF138;
 }
 .modal-reg-form button {
     font-size: 16px;
@@ -868,6 +874,11 @@ footer .icon-facebook {
     margin: 40px auto 0;
     width: 100%;
     cursor: pointer;
+    transition: all .2s ease;
+}
+.modal-reg-form button:hover {
+    background: #2B3541;
+    color: #FBF138;
 }
 .reg-close {
     width: 20px;
@@ -881,6 +892,7 @@ footer .icon-facebook {
     top: 30px;
     right: 30px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 
@@ -953,12 +965,6 @@ footer .icon-facebook {
         margin: 0 auto;
         padding: 29px 0 15px;
     }
-    .header-nav {
-        display: none;
-    }
-    .burger-btn {
-        display: block;
-    }
     .first-item {
         flex-basis: 0;
     }
@@ -971,14 +977,14 @@ footer .icon-facebook {
     .events-item-title {
         font-size: 20px;
     }
-    .timeline-grid {
-        display: flex;
-        flex-direction: column;
-    }
     .about-grid {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
+    }
+    ._content {
+        gap: 0 20px;
+        flex-wrap: wrap;
     }
     ._about {
         flex-basis: 48%;
@@ -987,15 +993,10 @@ footer .icon-facebook {
         flex-basis: 48%;
     }
     .about-grid-item-text {
-        flex-basis: 45%;
+        flex-basis: 48%;
     }
     .about-grid-title {
         margin-bottom: 18px;
-    }
-    ._content {
-        gap: 10%;
-        justify-content: space-between;
-        flex-wrap: wrap;
     }
     .about-grid-btn {
         margin: 30px 0;
@@ -1031,6 +1032,42 @@ footer .icon-facebook {
     }
     .content-text {
         font-size: 26px;
+    }
+    .timeline-grid {
+       grid-template-columns: repeat(2, 1fr);
+    }
+    .item-1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        height: 314px;
+    }
+    .item-2 {
+        grid-column: 2/2;
+        grid-row:1/2;
+        height: 314px;
+    }
+    .item-3 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        height: 357px;
+    }
+    .item-4 {
+        grid-column: 2/2;
+        grid-row: 2/3;
+        height: 357px;
+    }
+    .item-5 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        height: 274px;
+    }
+    .item-6 {
+        grid-column: 2/2;
+        grid-row: 3/4;
+        height: 274px;
+    }
+    .text-hidden {
+        margin-bottom: 30px;
     }
     .footer-logo,
     .header-logo {
@@ -1076,6 +1113,16 @@ footer .icon-facebook {
     }
 }
 @media (max-width: 750px) {
+    .header-nav {
+        display: none;
+    }
+    .burger-btn {
+        display: block;
+    }
+    .timeline-grid {
+        display: flex;
+        flex-direction: column;
+    }
     .content {
         max-width: 100%;
         padding: 50px 0;
@@ -1139,7 +1186,7 @@ footer .icon-facebook {
     }
     .grid-item-content {
         flex-direction: row;
-        justify-content: start;
+        justify-content: space-between;
         align-items: inherit;
         gap: 17px;
         padding: 20px 20px 0;
@@ -1148,8 +1195,20 @@ footer .icon-facebook {
         margin-top: 44px;
         margin-bottom: 8px;
     }
+    .content-date {
+        order: 1;
+        flex:1 0 118px;
+    }
+    .timeline-block {
+        display: flex;
+        gap: 20px;
+    }
+    .grid-item-text {
+        flex: 0 1 80%;
+    }
     .text-hidden {
         margin-bottom: 20px;
+        max-width: 460px;
     }
     .timeline-grid-item {
         height: 152px;
@@ -1188,12 +1247,13 @@ footer .icon-facebook {
     }
     .subscribing-form {
       flex-direction: column;
-      align-items: center;
-      flex-basis: 100%;
+      flex-basis: 340px;
     }
     .subscribing-email {
-        width: 255px;
         margin-left: 0;
+    }
+    .subscribing-btn {
+        width:100%;
     }
     #check01+label::before {
         margin-left: 0;
@@ -1227,6 +1287,8 @@ footer .icon-facebook {
     .about-grid-btn-mobile {
         display: block;
         margin-top: 17px;
+        padding: 22px 60px;
+        flex: 1 1 auto;
     }
     ._image {
         margin-top: 40px;
@@ -1267,6 +1329,9 @@ footer .icon-facebook {
     }
     .modal-reg-form {
         width: 340px;
+    }
+    .reg-mail, .reg-tel {
+        width: 90%;
     }
 }
 @media (max-width: 600px) {
@@ -1312,8 +1377,12 @@ footer .icon-facebook {
         margin-bottom: 16px;
     }
     .content-date {
-        right: 18px;
-        top: 7px;
+       position: absolute;
+       top: 20px;
+       right: 20px;
+    }
+    .text-hidden {
+        font-size: 12px;
     }
     .subscribing-content {
         padding-bottom: 40px;
@@ -1330,15 +1399,10 @@ footer .icon-facebook {
         top: 22px;
     }
     .subscribing-form {
-        align-items: flex-start;
-        flex-basis: content;
+        width: 100%;
     }
     .subscribing-email {
-        width: 300px;
-    }
-    .subscribing-btn {
-        padding: 22px 102px;
-        margin-top: 38px;
+        width: 87%;
     }
     ._content {
         flex-direction: column;
@@ -1375,11 +1439,14 @@ footer .icon-facebook {
 }
 @media (max-width: 360px) {
     .subscribing-email {
-        width: 82%;
+    .subscribing-form {
+        width: 100%;
     }
     .header-btn {
         display: block;
         flex-basis: 22%;
     }
-
+    .timeline-grid-item-title {
+        max-width: 200px;
+    }
 }
