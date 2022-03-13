@@ -1089,9 +1089,6 @@ footer .icon-facebook {
         width: 26px;    
         height: 26px;
     }
-    .icon-instagram {
-        margin-right: 20px;
-    }
 }
 @media (max-width: 815px) {
     .events-grid {
@@ -1356,7 +1353,7 @@ footer .icon-facebook {
     }
     .content-title {
         font-size: 26px;
-        padding-top: 45px;
+        letter-spacing: 0;
     }
     .content-text {
         margin-top: 46px;
