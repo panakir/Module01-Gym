@@ -747,7 +747,7 @@ footer .icon-facebook {
     width: 100%;    
     box-sizing: border-box;
     margin: 0 auto;
-    padding-top: 30px ;
+    padding: 30px 15px 0;
 }
 #modal .first-item {
     flex-direction: column;
@@ -1194,10 +1194,10 @@ footer .icon-facebook {
         justify-content: space-between;
         align-items: inherit;
         gap: 17px;
-        padding: 20px 20px 0;
+        padding: 20px 20px;
     }
     .timeline-grid-item-title {
-        margin-top: 44px;
+        margin-top: 30px;
         margin-bottom: 8px;
     }
     .content-date {
@@ -1346,6 +1346,11 @@ footer .icon-facebook {
     .item-right .events-item-title {
         max-width: 117px;
     }
+    .content-date {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+     }
 }
 @media (max-width: 500px) {
     .content {
@@ -1384,11 +1389,7 @@ footer .icon-facebook {
         max-width: 175px;
         margin-bottom: 16px;
     }
-    .content-date {
-       position: absolute;
-       top: 20px;
-       right: 20px;
-    }
+    
     .text-hidden {
         font-size: 12px;
     }
